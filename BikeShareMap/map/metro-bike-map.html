@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Metro Bike Share Map</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="metro-bike-map.css" />
+    <!--JavaScript-->
+    <script type="text/javascript" src="./load-map.js"></script>
+    <!-- reading csv file -->
+    <script src="https://unpkg.com/papaparse@5.1.0/papaparse.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="header">
+        <img id="headerLogo" src="../logos/normalBike.png" />
+        <h1>
+          Real Time <br />
+          Bike-Share-Data
+        </h1>
+      </div>
+
+      <!-- NAVBAR -->
+      <ul id="navbar">
+        <li class="navItem">
+          <a class="navContent">
+            <label for="cities">Filter Data By City: </label>
+            <select id="cities" onchange="filterStations()">
+              <option value="All Data">All Data</option>
+            </select>
+          </a>
+        </li>
+        <li class="navItem">
+          <a class="navContent">
+            <button style="cursor:pointer;" onclick="openNav()">
+              Show Directions.
+            </button>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- MAP -->
+    <div id="map"></div>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key={YOUR_API_KEY}&libraries=visualization&callback=initMap"
+    ></script>
+
+    <!-- Scroll Box Divs Here -->
+    <!-- List the Stations Here -->
+    <div id="itemList">
+      <div id="scrollbox">
+        <div id="stationList"></div>
+      </div>
+    </div>
+
+    <div id="legend"><h3>Legend</h3></div>
+
+    <!-- SIDE NAV BAR-->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <!--List the Directions Here -->
+      <div id="directions">
+        <div id="scrollbox">
+          directions display here
+          <div id="directionsPanel"></div>
+        </div>
+      </div>
+
+      <div>
+        <p id="footer">Created By Freddy Gutierrez and Alejandro Bernal</p>
+      </div>
+    </div>
+  </body>
+</html>

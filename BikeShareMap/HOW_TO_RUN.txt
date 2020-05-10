@@ -1,0 +1,6 @@
+1) download and install python onto your device
+2) open command line and navigate to folder that holds the files to be ran. In this case SeniorDesignProject2019-20-Metro-Bike-Share\bikeshare
+3) from within bikeshare folder run the cmd "python -m http.server", this will start a server on your computer. By default it is http://localhost:8000
+4) from there navigate map > metro-bike-map.html 
+
+
